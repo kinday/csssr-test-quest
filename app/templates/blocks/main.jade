@@ -1,0 +1,98 @@
+h1.title Дело
+
++input({
+		id: 'full_name',
+		label: 'Полное ФИО',
+		value: 'Киндай Леонард Александрович'
+})
+
++input({
+		id: 'birth_year',
+		label: 'Год рождения',
+		value: 1988
+})
+
++input({
+		id: 'location',
+		label: 'Место жительства',
+		value: 'г. Гомель, Белоруссия'
+})
+
++input({
+		id: 'skype',
+		label: 'Скайп',
+		value: 'leonard.kinday'
+})
+
++input({
+		id: 'email',
+		label: 'Почта',
+		value: 'leonard@kinday.ru'
+})
+
+div.switch-group
+	.switch-group__label Выпускник <a href="http://htmlacademy.ru/" title="HTML Academy">htmlacademy.ru</a>
+	.switch-group__switches
+		+switch({
+			id: 'htmlacademy-graduate',
+			inline: true,
+			label: 'Да',
+			name: 'htmlacademy-graduate',
+			type: 'radio',
+			value: 1
+		})
+
+		+switch({
+			id: 'not-htmlacademy-graduate',
+			inline: true,
+			label: 'Нет',
+			name: 'htmlacademy-graduate',
+			selected: true,
+			type: 'radio',
+			value: 0
+		})
+
+section.skills
+	h1.h1 Практические навыки
+
+	p.notice Отметьте только те технологии и типы задач, с которыми вы хорошо знакомы. Отсутсвие опыта отнюдь не означает, что у вас меньше шансов стать нашим сотрудником. Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.
+
+	div.row.row_even
+		div.row__col
+			+skillsList([
+				['bem', 'Методология БЭМ', 1],
+				['jquery', 'jQuery', 1],
+				['grunt', 'Использую GRUNT', 1],
+				['haml', 'HAML', 1],
+				['sass', 'SASS', 1],
+				['less', 'LESS', 1],
+				['coffeescript', 'CoffeeScript', 1]
+			])
+
+		div.row__col
+			+skillsList([
+				['jade', 'Jade', 1],
+				['stylus', 'Stylus', 1],
+				['angular', 'Знаю (изучаю) Angular', 0],
+				['android', 'Верстка под Android', 0],
+				['ios', 'Верстка под iOS', 0],
+				['windows', 'Верстка под Windows Phone', 0]
+			])
+
+		div.row__col
+			+skillsList([
+				['emails', 'Верстка рассылок', 0],
+				['adaptive', 'Адаптивная верстка', 1],
+				['dropbox', 'Использую Dropbox', 1],
+				['gmail', 'Использую Gmail', 1],
+				['github', 'Использую GitHub', 1]
+			])
+
+section.javascript-level
+	h1.h1 Уровень владения JavaScript
+
+	include ../blocks/slider
+
+div.input
+	span.input__label Дата заполнения
+	span.input__field 02.02.2015

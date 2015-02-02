@@ -1,0 +1,136 @@
+.skills
+	padding-bottom 50px
+
+
+.javascript-level
+	padding-bottom 40px
+
+
+.main
+	padding-left 60px
+	padding-right 72px
+
+
+.h1
+	padding-top 25px
+	padding-bottom 10px
+
+
+.input
+	padding-bottom 18px
+
+	&__field
+		width 100%
+		padding-bottom 8px
+		padding-left 16px
+		padding-right 16px
+
+		font 30px/36px 'Courier New', mono
+
+		background-image url('/assets/images/input__field.png')
+		background-repeat repeat-x
+		background-position left bottom
+
+	&__label
+		padding-right 16px
+
+		vertical-align bottom
+		white-space nowrap
+
+
+.notice
+	position relative
+
+	padding-left 20px
+	padding-bottom 20px
+
+	color #3d3d3d
+	font-size 14px
+	font-weight 400
+	line-height 22px
+
+	&:before
+		content '*'
+
+		position absolute
+		left 0
+		top .25em
+
+		font-size 36px
+
+
+.row
+	display table
+	width 100%
+
+	&_narrow
+		width auto
+
+	&_even
+		table-layout fixed
+
+	&__col
+		display table-cell
+
+
+.switch
+	&_inline
+		display inline-block
+
+	&_inline &__label
+		padding-right 16px
+
+	&__btn
+		display none
+
+	&__label
+		display inline-block
+
+		&_type
+			&_checkbox
+				padding-left 32px
+				padding-top 5px
+				padding-bottom 5px
+
+				line-height 25px
+
+				background-image uri('images/switch__label_type_checkbox.png')
+				background-repeat no-repeat
+
+				.switch__btn:checked + &
+					background-image uri('images/switch__label_type_checkbox_is_active.png')
+
+			&_radio
+				padding-left 36px
+
+				line-height 30px
+
+				background-image uri('images/switch__label_type_radio.png')
+				background-repeat no-repeat
+
+				.switch__btn:checked + &
+					background-image uri('images/switch__label_type_radio_is_active.png')
+
+
+.switch-group
+	padding-top 25px
+	padding-bottom 20px
+
+	&__label
+	&__switches
+		display inline-block
+
+	&__label
+		padding-right 32px
+
+
+.title
+	width 251px
+	height 118px
+	margin 0 auto 55px
+
+	imageReplacement()
+
+	background-image uri('images/title.gif')
+	background-position left center
+	background-repeat no-repeat

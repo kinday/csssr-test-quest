@@ -1,0 +1,50 @@
+//-
+	Создаёт список умений (безумных)
+
+	@param {array} list Массив из массивов вида [идентификатор, название, состояние]
+mixin skillsList(list)
+	each item in list
+		+switch({
+			id: 'skills__' + item[0],
+			label: item[1],
+			name: 'skills[' + item[0] + ']',
+			selected: !!item[2]
+		})
+
+//-
+	Создаёт поле ввода
+
+	@param {object} opts Свойства переключателя
+	@param opts.id Идентификатор для связи с <label>
+	@param opts.label Подпись для переключателя
+	@param [opts.type="text"] Выбирает тип поля
+	@param [opts.value] Предустановленное значение поля
+mixin input(opts)
+	- opts.type = opts.type ? opts.type.toString() : 'text'
+	- opts.value = opts.value ? opts.value.toString() : false
+	div.input.row
+		label.input__label.row__col(for=opts.id)= opts.label
+		span.input__field.row__col
+			input(id=opts.id, name=opts.id, type=opts.type, value=opts.value, autocomplete='off')
+
+
+//-
+	Создаёт переключатель с подписью
+
+	@param {object} opts Свойства переключателя
+	@param [opts.disabled=false] Делает переключатель неактивным
+	@param opts.id Идентификатор для связи с <label>
+	@param opts.label Подпись для переключателя
+	@param [opts.name] Имя для чекбокса или группы радиокнопок
+	@param [opts.selected=false] Делает переключатель выбранным
+	@param [opts.type="checkbox"] Выбирает тип переключателя `checkbox` или ̀radiò
+	@param [opts.value] Значение переключателя
+mixin switch(opts)
+	- opts.disabled = !!opts.disabled
+	- opts.inline = !!opts.inline ? 'switch_inline' : ''
+	- opts.selected = !!opts.selected
+	- opts.type = opts.type ? opts.type : 'checkbox'
+	- opts.value = opts.value ? opts.value.toString() : 1
+	div.switch(class=opts.inline)
+		input.switch__btn(id=opts.id, name=opts.name, type=opts.type, value=opts.value, checked=opts.selected)
+		label.switch__label(class!='switch__label_type_' + opts.type, for=opts.id)= opts.label

@@ -1,0 +1,85 @@
+$handle
+	width 18px
+	height 35px
+
+	background-image url('/assets/images/slider__handle.png')
+	background-repeat no-repeat
+	background-position right bottom
+
+
+.slider
+	font-size 13px
+	line-height 19px
+
+	&.is-initialized .slider-label
+		cursor pointer
+
+	&__handle
+		@extend $handle
+
+	&__labels
+		position relative
+
+		display table
+		width 100%
+		margin-top -3px
+
+		.slider-label
+			display table-cell
+
+	&__shaft
+		position relative
+
+		height 38px
+		margin-left -8px
+		margin-right -8px
+
+		&:after
+			content ''
+
+			position absolute
+			left 8px
+			right 8px
+			bottom 0
+
+			display block
+			height 5px
+
+			background-image url('/assets/images/slider__shaft.png')
+			background-repeat repeat-x
+			background-position center bottom
+
+
+.slider-label
+	position relative
+
+	min-width 150px
+	padding-top 34px
+
+	background-image url('/assets/images/slider-label.png')
+	background-repeat no-repeat
+	background-position left -13px
+
+	&_place
+		&_first
+			background-position left top
+
+		&_last
+			text-align right
+
+			background-position right top
+
+			&.is-active
+				&:before
+					right -6px
+
+	&.is-active
+		&:before
+			content ''
+
+			position absolute
+			bottom 100%
+			margin-left -8px
+
+			display block
+			@extend $handle
